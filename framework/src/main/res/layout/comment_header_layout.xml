@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/headerLayout"
+    android:orientation="vertical"
+    android:background="@color/PrimaryColor"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <com.example.framework.view.FakStatusBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/mToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:minHeight="48dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:contentInsetStartWithNavigation="0dp"
+        app:navigationIcon="@drawable/ic_round_arrow_back_ios_24"
+        app:titleMarginStart="0dp"
+        app:titleTextAppearance="@android:style/TextAppearance.Holo.Medium"
+        app:titleTextColor="@android:color/white"
+        tools:title="@android:string/copy" />
+</LinearLayout>

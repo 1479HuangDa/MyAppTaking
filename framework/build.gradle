@@ -1,0 +1,125 @@
+apply plugin: rootProject.ext.plugins.android_library
+apply plugin: rootProject.ext.plugins.kotlin_android
+apply plugin: rootProject.ext.plugins.kotlin_android_extensions
+apply plugin: rootProject.ext.plugins.kotlin_kapt
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    useLibrary rootProject.ext.dependencies.httpclient
+
+    defaultConfig {
+
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        buildConfigField("String", "LOG_TAG", "\"log_tag\"")
+        buildConfigField("String","SP_NAME","\"Config\"")
+    }
+
+    buildTypes {
+        debug{
+
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+    kapt {
+        generateStubs = true
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+
+    implementation rootProject.ext.dependencies.kotlin_stdlib
+    implementation rootProject.ext.dependencies.core_ktx
+    implementation rootProject.ext.dependencies.app_compat
+    api rootProject.ext.dependencies.app_material
+    api rootProject.ext.dependencies.immersionbar
+    api rootProject.ext.dependencies.fragmentationx
+    api rootProject.ext.dependencies.multidex
+
+    //Bmob
+    api rootProject.ext.dependencies.bmobsdk
+    api rootProject.ext.dependencies.rxjava2
+    api rootProject.ext.dependencies.rxandroid2
+    api rootProject.ext.dependencies.okio
+    api rootProject.ext.dependencies.gson
+    api rootProject.ext.dependencies.okhttp3
+
+    api rootProject.ext.dependencies.permissionx
+
+    //图片加载
+    api rootProject.ext.dependencies.glide
+    kapt rootProject.ext.dependencies.glide_compiler
+    api rootProject.ext.dependencies.glide_okhttp3_integration
+    api rootProject.ext.dependencies.glide_transformations
+
+    api rootProject.ext.dependencies.circleimageview
+    api rootProject.ext.dependencies.eventbus
+    api rootProject.ext.dependencies.litepal
+
+    api rootProject.ext.dependencies.swiperefreshlayout
+    api rootProject.ext.dependencies.TypeBuilder
+
+    //RecyclerView
+    api rootProject.ext.dependencies.BaseRecyclerViewAdapterHelper
+
+    api rootProject.ext.dependencies.panelSwitchHelper
+
+    //地图
+    api rootProject.ext.dependencies.map_3d
+    api rootProject.ext.dependencies.location
+    api rootProject.ext.dependencies.search
+
+    //融云基础库
+    api rootProject.ext.dependencies.rongCloudImLib
+    api rootProject.ext.dependencies.rongCloudCallLib
+
+    api rootProject.ext.dependencies.photoview
+
+    api rootProject.ext.dependencies.zxing
+
+    api rootProject.ext.dependencies.videoplayer
+
+     // Lame 录音 MP3 转码器
+    api rootProject.ext.dependencies.lame
+
+    compileOnly rootProject.ext.dependencies.lombok
+    kapt rootProject.ext.dependencies.lombok
+
+    api project(path: ':walley')
+
+    testImplementation 'junit:junit:4.13.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}

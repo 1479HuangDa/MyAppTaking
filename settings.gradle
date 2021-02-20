@@ -1,0 +1,4 @@
+include ':walley'
+include ':framework'
+include ':app'
+rootProject.name = "MyAppTaking"

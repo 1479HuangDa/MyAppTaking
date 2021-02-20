@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:state_selected="true" android:drawable="@drawable/ic_round_done_24_blued" />
+    <item android:drawable="@drawable/ic_round_done_trans_24" android:state_selected="false" />
+
+</selector>

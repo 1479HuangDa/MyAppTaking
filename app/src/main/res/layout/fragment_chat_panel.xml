@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/PrimaryColor">
+
+            <include layout="@layout/comment_header_layout" />
+        </LinearLayout>
+
+        <com.effective.android.panel.view.PanelSwitchLayout
+            android:id="@+id/panel_switch_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:animationSpeed="standard">
+
+            <com.effective.android.panel.view.content.LinearContentContainer
+                android:id="@+id/content_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:linear_edit_view="@id/et_input_msg">
+
+                <FrameLayout
+                    android:id="@+id/list_panel"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:id="@+id/chat_panel_footer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <include
+                        android:id="@+id/chat_panel_footer_ope"
+                        layout="@layout/fragment_chat_panel_footer" />
+                </LinearLayout>
+
+            </com.effective.android.panel.view.content.LinearContentContainer>
+
+            <com.effective.android.panel.view.panel.PanelContainer
+                android:id="@+id/panel_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white" />
+
+
+        </com.effective.android.panel.view.PanelSwitchLayout>
+
+    </LinearLayout>
+</layout>

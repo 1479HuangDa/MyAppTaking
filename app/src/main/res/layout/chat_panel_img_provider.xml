@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+    <LinearLayout
+        android:id="@+id/iv_left_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_left_photo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            tools:src="@mipmap/ic_launcher" />
+
+        <com.example.framework.view.bubbleview.BubbleImageView
+            android:id="@+id/iv_left_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_4"
+            android:layout_marginStart="@dimen/dp_4"
+            android:layout_marginLeft="@dimen/dp_4"
+            android:maxWidth="260dp"
+            android:maxHeight="260dp"
+            android:minWidth="90dp"
+            android:minHeight="90dp"
+            android:adjustViewBounds="false"
+            android:scaleType="centerCrop"
+            app:angle="4dp"
+            app:arrowHeight="10dp"
+            app:arrowLocation="left"
+            app:arrowPosition="14dp"
+            app:arrowWidth="8dp"
+            app:bubbleColor="@color/PrimaryColor"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/iv_right_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <com.example.framework.view.bubbleview.BubbleImageView
+            android:id="@+id/iv_right_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_4"
+            android:layout_marginRight="@dimen/dp_4"
+            android:maxWidth="260dp"
+            android:maxHeight="260dp"
+            android:minWidth="90dp"
+            android:minHeight="90dp"
+            android:adjustViewBounds="false"
+            android:scaleType="centerCrop"
+            app:angle="4dp"
+            app:arrowHeight="10dp"
+            app:arrowLocation="right"
+            app:arrowPosition="14dp"
+            app:arrowWidth="8dp"
+            app:bubbleColor="@color/PrimaryColor"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_right_photo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/ic_launcher" />
+    </LinearLayout>
+</LinearLayout>

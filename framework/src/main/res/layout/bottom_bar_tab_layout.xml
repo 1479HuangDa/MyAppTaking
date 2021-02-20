@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+    android:background="?attr/selectableItemBackgroundBorderless"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="28dp"
+        android:minHeight="28dp">
+
+
+        <ImageView
+            android:id="@+id/tab_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerInParent="true"
+            android:contentDescription="@android:string/copy"
+            android:scaleType="centerInside"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/unreadTv"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/tab_icon"
+            android:layout_toRightOf="@+id/tab_icon"
+            android:gravity="center"
+            android:minWidth="20dp"
+            android:paddingLeft="@dimen/dp_4"
+            android:paddingRight="@dimen/dp_4"
+            android:textAppearance="@android:style/TextAppearance.Holo.Small"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            android:visibility="gone"
+            tools:text="@android:string/copy" />
+    </RelativeLayout>
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tab_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:textAppearance="@android:style/TextAppearance.Holo.Small"
+        android:textColor="@color/tab_text_0"
+        android:textSize="12sp"
+        tools:text="@android:string/copy" />
+
+
+</LinearLayout>

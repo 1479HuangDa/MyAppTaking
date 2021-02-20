@@ -1,0 +1,102 @@
+apply plugin: rootProject.ext.plugins.application
+apply plugin: rootProject.ext.plugins.kotlin_android
+apply plugin: rootProject.ext.plugins.kotlin_android_extensions
+apply plugin: rootProject.ext.plugins.kotlin_kapt
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+
+    defaultConfig {
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexKeepProguard file('maindex_keep.pro')
+
+//        ndk {
+//            abiFilters "x86", "armeabi", "armeabi-v7a","arm64-v8a"
+//        }
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a"
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file(rootProject.meet_release_key.store_file)
+            storePassword rootProject.meet_release_key.key_password
+            keyAlias rootProject.meet_release_key.key_alias
+            keyPassword rootProject.meet_release_key.store_password
+        }
+
+        debug {
+            storeFile file(rootProject.meet_dev_key.store_file)
+            storePassword rootProject.meet_dev_key.key_password
+            keyAlias rootProject.meet_dev_key.key_alias
+            keyPassword rootProject.meet_dev_key.store_password
+        }
+    }
+
+
+    buildTypes {
+        debug {
+
+            ndk {
+                abiFilters "x86", "armeabi", "armeabi-v7a", "arm64-v8a"
+            }
+
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+    kapt {
+        generateStubs = true
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+
+    implementation rootProject.ext.dependencies.kotlin_stdlib
+    implementation rootProject.ext.dependencies.core_ktx
+//    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation rootProject.ext.dependencies.app_compat
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation rootProject.ext.dependencies.tagcloud
+    implementation project(path: ':framework')
+
+    testImplementation 'junit:junit:4.13.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_margin="@dimen/dp_10"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/ic_round_location" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <com.example.framework.view.MarqueeTextView
+            android:id="@+id/tv_title_irsa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            tools:text="@string/app_index_text" />
+
+
+        <com.example.framework.view.MarqueeTextView
+            android:id="@+id/tv_address_irsa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_4"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="12sp"
+            tools:text="@string/app_index_text" />
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/avi"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_margin="@dimen/dp_10"
+        android:src="@drawable/selected_location_pos" />
+</LinearLayout>

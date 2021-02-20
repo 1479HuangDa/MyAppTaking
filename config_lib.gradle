@@ -1,0 +1,126 @@
+ext {
+    def kotlin_version = "1.4.21"
+    lombok_version = "1.18.2"
+    plugins = [
+            android_library          : 'com.android.library',
+            java_library             : 'java-library',
+            application              : 'com.android.application',
+            kotlin_android           : 'kotlin-android',
+            kotlin_pl                : 'kotlin',
+            kotlin_android_extensions: 'kotlin-android-extensions',
+            kotlin_kapt              : 'kotlin-kapt'
+    ]
+
+    android = [
+            applicationId    : "com.example.myapptaking",
+            compileSdkVersion: 30,
+            buildToolsVersion: "30.0.2",
+
+            minSdkVersion    : 16,
+            targetSdkVersion : 30,
+
+            versionCode      : 1,
+            versionName      : "1.1.7",
+    ]
+
+    // SHA1 = C5:13:9C:13:BF:9E:EB:BA:F0:35:1A:02:51:4A:3C:CE:D1:0E:BD:07
+    meet_dev_key = [
+            store_file    : "jks/meet_dev.jks",
+            key_password  : "123456",
+            key_alias     : "meet_dev",
+            store_password: "123456"
+    ]
+
+    //SHA1 = 3E:39:4B:0D:01:DF:BB:22:98:09:F1:F3:F3:D0:F6:11:B5:43:AC:F4
+    meet_release_key = [
+            store_file    : "jks/meet_release.jks",
+            key_password  : "123456",
+            key_alias     : "meet_release",
+            store_password: "123456"
+    ]
+
+
+    dependencies = [
+            httpclient                   : 'org.apache.http.legacy',
+            kotlin_stdlib                : "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}",
+            core_ktx                     : 'androidx.core:core-ktx:1.3.2',
+            app_compat                   : 'androidx.appcompat:appcompat:1.2.0',
+            app_material                 : 'com.google.android.material:material:1.2.1',
+            constraintlayout             : 'androidx.constraintlayout:constraintlayout:2.0.1',
+            junit                        : 'junit:junit:4.12',
+            ext_junit                    : 'androidx.test.ext:junit:1.1.1',
+            espresso_core                : 'androidx.test.espresso:espresso-core:3.2.0',
+            multidex                     : 'androidx.multidex:multidex:2.0.1',
+
+            immersionbar                 : 'com.gyf.immersionbar:immersionbar:3.0.0',
+            swiperefreshlayout           : 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0',
+
+            //fragmentation_x
+            fragmentationx               : 'me.yokeyword:fragmentationx:1.0.2',
+
+            //Bmob
+            bmobsdk                      : 'cn.bmob.android:bmob-sdk:3.7.8',
+            rxjava2                      : "io.reactivex.rxjava2:rxjava:2.2.2",
+            rxandroid2                   : 'io.reactivex.rxjava2:rxandroid:2.1.0',
+            okio                         : 'com.squareup.okio:okio:2.1.0',
+            gson                         : 'com.google.code.gson:gson:2.8.5',
+            okhttp3                      : 'com.squareup.okhttp3:okhttp:3.12.0',
+
+            //https://github.com/misakuo/3dTagCloudAndroid
+            tagcloud                     : 'com.moxun:tagcloudlib:1.2.0',
+
+            //图片加载
+            glide                        : 'com.github.bumptech.glide:glide:4.11.0',
+            glide_compiler               : 'com.github.bumptech.glide:compiler:4.11.0',
+            glide_okhttp3_integration    : 'com.github.bumptech.glide:okhttp3-integration:4.11.0',
+            glide_transformations        : 'jp.wasabeef:glide-transformations:4.1.0',
+
+            permissionx                  : 'com.permissionx.guolindev:permissionx:1.3.0',
+
+            circleimageview              : 'de.hdodenhof:circleimageview:3.0.0',
+            eventbus                     : 'org.greenrobot:eventbus:3.1.1',
+            litepal                      : 'org.litepal.android:java:3.0.0',
+
+            //高德地图
+            map_3d                       : 'com.amap.api:3dmap:5.1.0',
+            location                     : 'com.amap.api:location:3.3.0',
+            search                       : 'com.amap.api:search:5.1.0',
+
+            TypeBuilder                  : 'com.github.ikidou:TypeBuilder:1.0',
+
+            //https://www.ctolib.com/YummyLau-PanelSwitchHelper.html
+            panelSwitchHelper            : 'com.effective.android:panelSwitchHelper-androidx:1.3.6',
+
+            //RecyclerView
+            BaseRecyclerViewAdapterHelper: 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.6',
+
+            //即时通讯基础能力库
+            rongCloudImLib               : 'cn.rongcloud.sdk:im_lib:4.0.3.6',
+
+            // 音视频呼叫信令
+            rongCloudCallLib             : 'cn.rongcloud.sdk:call_lib:4.0.3.6',
+
+            lombok                       : "org.projectlombok:lombok:$lombok_version",
+
+            photoview                    : 'com.github.chrisbanes:PhotoView:2.3.0',
+
+            // Lame 录音 MP3 转码器
+            lame                         : 'net.qiujuer.lame:lame:1.2.0',
+
+            zxing                        : 'cn.yipianfengye.android:zxing-library:2.2',
+
+            //
+            novacrypto                   : 'io.github.novacrypto:BIP39:0.1.9',
+            web3j                        : 'org.web3j:core:4.6.0-android',
+
+            videoplayer                  : 'cn.jzvd:jiaozivideoplayer:7.0.5',
+
+    ]
+
+    //仓库
+    maven = [
+            bmobUrl  : "https://dl.bintray.com/chaozhouzhang/maven",
+            jitpack  : "https://jitpack.io",
+            rongcloud: "https://dl.bintray.com/rongcloud/maven"
+    ]
+}

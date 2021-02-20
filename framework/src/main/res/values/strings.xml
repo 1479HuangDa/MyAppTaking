@@ -1,0 +1,23 @@
+<resources>
+<!--    <string name="app_name">Framework</string>-->
+    <!--高德地图key-->
+    <string name="gao_de_key" translatable="false">1c204480721209947b7936693022fd2d</string>
+    <string name="gao_de_key_web" translatable="false">c23829584f6a3d3b4ef8f43cce670969</string>
+
+    <string name="text_devices_not_supper_audio">设备不支持音视频通话</string>
+
+    <string name="text_chat_add_friend_channl">添加好友</string>
+    <string name="text_chat_argeed_friend_channl">同意好友</string>
+    <string name="text_chat_friend_msg_channl">好友消息</string>
+
+    <string name="text_server_status">服务器未连接</string>
+
+    <string name="text_server_noti_send_text">请求添加好友</string>
+    <string name="text_server_noti_receiver_text">同意添加好友</string>
+
+    <string name="text_chat_record_audio" >[音频]</string>
+    <string name="text_chat_record_video">[视频]</string>
+    <string name="text_chat_record_img">[图片]</string>
+    <string name="text_chat_record_location">[位置]</string>
+
+</resources>

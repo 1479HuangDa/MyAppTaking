@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="onViewClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:background="@android:color/darker_gray">
+
+        <com.amap.api.maps.MapView
+            android:id="@+id/map_ams"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/back_to_my_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="@dimen/dp_4"
+                android:background="@drawable/back_to_my_location_bg"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:onClick="@{onViewClick}"
+                android:tint="@color/back_to_my_location"
+                app:srcCompat="@drawable/ic_round_my_location_24" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="340dp"
+                android:layout_gravity="bottom"
+                android:background="@android:color/white"
+                android:orientation="vertical"
+                android:paddingBottom="12dp">
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@android:color/darker_gray" />
+
+                <FrameLayout
+                    android:id="@+id/rlv_search_ams"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <!--                <androidx.recyclerview.widget.RecyclerView-->
+                <!--                    android:id="@+id/rlv_search_ams"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="match_parent" />-->
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.example.framework.view.FakStatusBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_10">
+
+                <ImageView
+                    android:id="@+id/back_page"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:onClick="@{onViewClick}"
+                    android:background="@drawable/text_bg_blue"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/ic_round_navigate_before_24"
+                    app:tint="@android:color/white" />
+
+                <EditText
+                    android:id="@+id/et_search_ams"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_fill_white_with_gray_rec_bg"
+                    android:hint="@string/input_address"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:padding="8dp"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/iv_sending"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_bg_blue"
+                    android:gravity="center"
+                    android:minHeight="32dp"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="@dimen/dp_4"
+                    android:paddingRight="8dp"
+                    android:paddingBottom="@dimen/dp_4"
+                    android:text="@string/sending"
+                    android:onClick="@{onViewClick}"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/sp_14" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </FrameLayout>
+</layout>
